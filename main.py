@@ -1,9 +1,9 @@
-import random  # For generating random numbers
-import sys  # We will use sys.exit to exit the program
+import random
+import sys
 import pygame
-from pygame.locals import *  # Basic pygame imports
+from pygame.locals import *
 
-# Global Variables for the game
+
 FPS = 32
 SCR_WIDTH = 289
 SCR_HEIGHT = 511
@@ -156,9 +156,6 @@ def is_Colliding(p_x, p_y, up_pipes, low_pipes):
 
 
 def get_Random_Pipes():
-    """
-    Generate positions of two pipes(one bottom straight and one top rotated ) for blitting on the screen
-    """
     pip_h = GAME_IMAGE['pipe'][0].get_height()
     off_s = SCR_HEIGHT / 3
     yes2 = off_s + random.randrange(0, int(SCR_HEIGHT - GAME_IMAGE['base'].get_height() - 1.2 * off_s))
@@ -206,5 +203,5 @@ if __name__ == "__main__":
     GAME_IMAGE['PLAYER'] = pygame.image.load(PLAYER).convert_alpha()
 
     while True:
-        welcome_main_screen()  # Shows welcome screen to the user until he presses a button
-        main_gameplay()  # This is the main game function
+        welcome_main_screen()
+        main_gameplay()
